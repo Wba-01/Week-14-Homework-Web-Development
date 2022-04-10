@@ -19,35 +19,67 @@ Answer the following questions about the HTTP request and response process.
 
 1. What type of architecture does the HTTP request and response process occur in?
 
+> Client server architecture wher the requests are made from the client to the server and then response back to the client
+
 2. What are the different parts of an HTTP request? 
+
+> Request line header and the body
 
 3. Which part of an HTTP request is optional?
 
+> Request Body
+
 4. What are the three parts of an HTTP response?
+
+> Status line, response headers and body
 
 5. Which number class of status codes represents errors?
 
+> 400 and 500
+
 6. What are the two most common request methods that a security professional will encounter?
+
+> The get and post requests
 
 7. Which type of HTTP request method is used for sending data?
 
+> The post request
+
 8. Which part of an HTTP request contains the data being sent to the server?
 
+> The Response Body which takes the data from HTML forms packages it and sends to the server
+
 9. In which part of an HTTP response does the browser receive the web code to generate and style a web page?
+
+> The Response Body Data received along with the response
+
+---
 
 #### Using curl
 
 Answer the following questions about `curl`:
 
-10. What are the advantages of using `curl` over the browser?
+10. What are the advantages of using `curl` over the browser?\
+
+> It is very flexible and you can complete a variety of tasks including user authentication, HTTP post, SSL connections, proxy support, FTP uploads. It can be repeated, automated and modified which provides flexiility
 
 11. Which `curl` option is used to change the request method?
 
+> * The options can be **_using the `-X` or `--request` command-line options_**
+
 12. Which `curl` option is used to set request headers?
+
+> * **_`-H`, `--header`_**
 
 13. Which `curl` option is used to view the response header?
 
+> * **_`-i`, `--include`_**
+
 14. Which request method might an attacker use to figure out which HTTP requests an HTTP server will accept?
+
+> The attacker could use get or options
+
+---
 
 #### Sessions and Cookies
 
@@ -62,6 +94,7 @@ Answer the following questions about sessions and cookies:
     Content-type: text/html
     Set-Cookie: cart=Bob
     ```
+>   `set-cookie` will send cookies
 
 16. Which request header will continue the client's session?
 
@@ -70,6 +103,9 @@ Answer the following questions about sessions and cookies:
     Host: www.example.org
     Cookie: cart=Bob
     ```
+> `cookie` will maintain a session
+
+---
 
 #### Example HTTP Requests and Responses
 
@@ -92,11 +128,19 @@ username=Barbara&password=password
 
 17. What is the request method?
 
+>Post
+
 18. Which header expresses the client's preference for an encrypted response?
+
+> Upgrade-Insecure-Requests: 1
 
 19. Does the request have a user session associated with it?
 
+> No, the Session is not restablished yet
+
 20. What kind of data is being sent from this request body?
+
+> Login information with username and password
 
 **HTTP Response**
 
@@ -119,13 +163,25 @@ X-XSS-Protection: 1; mode=block
 
 21. What is the response status code?
 
+> 200
+
 22. What web server is handling this HTTP response?
+
+> Apache
 
 23. Does this response have a user session associated to it?
 
+> Yes there is a **setcookie:SessionID=5**
+
 24. What kind of content is likely to be in the [page content] response body?
 
+> HTML code and text
+
 25. If your class covered security headers, what security request headers have been included?
+
+> X-XSS protection
+
+---
 
 #### Monoliths and Microservices
 
@@ -133,9 +189,15 @@ Answer the following questions about monoliths and microservices:
 
 26. What are the individual components of microservices called?
 
+> Services
+
 27. What is a service that writes to a database and communicates to other services?
 
+> Application Programing Interface (API)
+
 28. What type of underlying technology allows for microservices to become scalable and have redundancy?
+
+> Containers
 
 #### Deploying and Testing a Container Set
 
@@ -143,15 +205,25 @@ Answer the following questions about multi-container deployment:
 
 29. What tool can be used to deploy multiple containers at once?
 
+> Docker Compose
+
 30. What kind of file format is required for us to deploy a container set?
+
+> **YAML** file
 
 #### Databases
 
 31. Which type of SQL query would we use to see all of the information within a table called `customers`?
 
+> **_SELECT statements_**
+
 32. Which type of SQL query would we use to enter new data into a table? (You don't need a full query, just the first part of the statement.)
 
+> **Insert** query by specifying the name to the variable where new data is added
+
 33. Why would we never run `DELETE FROM <table-name>;` by itself?
+
+> It deletes the entire table since it does not have the `where` clause
 
 ---
 
